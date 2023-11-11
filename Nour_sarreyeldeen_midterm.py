@@ -27,13 +27,18 @@ def open_tab():
   link = "https://" + Tab["URL"]
   print(link)
   driver.get(link)
-def close_tab(i):
-  if 0 <= i < len(Tabs):
-    Tabs[i](driver.close)
-    del Tabs[i]
+def close_tab():
+  if Tabs:
+   for i, tab in enumerate(Tabs):
+    choice = int(input("Enter tab number: ")) - 1
+    if 0 <= choice < len(Tabs):
+     driver.switch_to.window(driver.window_handles[choice])
+     driver.close()
+     del Tabs[choice]
+    else:
+     print("Invalid tab number, try again...")
   else:
-    print("Invalid tab index")
-    
+    driver.close()
 def switch_tabs(Tab):
   link = "https://" + Tab["URL"]
   driver.switch_to.window(driver.window_handles[1])
