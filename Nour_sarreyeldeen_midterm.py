@@ -18,32 +18,27 @@ import time
 Tabs = []
 driver = webdriver.Chrome() 
 
+
 def open_tab():
   Tab = {}
-  Tab["URL"] = input("enter a valid URL:https:// ")
-  Tab["Title"] = input("enter title")
-  #driver = webdriver.Chrome() 
-  #Tab["content"] = webbrowser.open(Tab["URL"])
-  #driver.get(Tab["URL"]) 
+  Tab["URL"] = input("enter a valid URL:")
+  Tab["Title"] = input("enter title: ")
   Tabs.append(Tab)
-  driver.get("https://www.google.com/")
-  time.sleep(99999999)
-  
- 
- 
-def close_tab():
-  
-  
-  url = "https://www.google.com/"
+  link = "https://" + Tab["URL"]
+  print(link)
+  driver.get(link)
+def close_tab(i):
+  if 0 <= i < len(Tabs):
+    Tabs[i](driver.close)
+    del Tabs[i]
+  else:
+    print("Invalid tab index")
     
-  # Fetching the Url 
-  #driver.get(url) 
-  driver.close()
-
-
-
-
-#def switch_tabs():
+def switch_tabs(Tab):
+  link = "https://" + Tab["URL"]
+  driver.switch_to.window(driver.window_handles[1])
+  driver.get(link)
+  driver.switch_to.window(driver.window_handles[0])
 
 #def close_tab():
 #def close_tab():
@@ -58,10 +53,6 @@ def close_tab():
 #def save_tabs():
   
 #def import_tabs():
-  
-def exit_():
-  aa = 3
-  
 def menu():
  print("Menu :")
  print("1. Openinig tabs")
