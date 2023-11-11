@@ -23,6 +23,7 @@ def open_tab():
   Tab = {}
   Tab["URL"] = input("enter a valid URL:")
   Tab["Title"] = input("enter title: ")
+  Tab["number"] = len(Tabs) + 1
   Tabs.append(Tab)
   link = "https://" + Tab["URL"]
   print(link)
@@ -39,18 +40,11 @@ def close_tab():
      print("Invalid tab number, try again...")
   else:
     driver.close()
-def switch_tabs(Tab):
-  link = "https://" + Tab["URL"]
-  driver.switch_to.window(driver.window_handles[1])
-  driver.get(link)
-  driver.switch_to.window(driver.window_handles[0])
-
-#def close_tab():
-#def close_tab():
+#def switch_tabs(Tab):
   
-#def switch_tab():
+
 #def display_all_tabs():
-  #print(f"{Tab['title']} {Tab['URL']}")
+ 
 #def open_nested_tab():
   
 #def clear_all_tabs():
