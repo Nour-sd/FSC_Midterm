@@ -8,30 +8,38 @@
 # save tabs :
 # import tabs :
 # exit :
-import webbrowser
+import webbrowser, selenium
 
-
-import subprocess
-
-
-
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+import time
 
 
 Tabs = []
-
+driver = webdriver.Chrome() 
 
 def open_tab():
   Tab = {}
   Tab["URL"] = input("enter a valid URL:https:// ")
   Tab["Title"] = input("enter title")
-  Tab["content"] = webbrowser.open(Tab["URL"])
+  #driver = webdriver.Chrome() 
+  #Tab["content"] = webbrowser.open(Tab["URL"])
+  #driver.get(Tab["URL"]) 
   Tabs.append(Tab)
+  driver.get("https://www.google.com/")
+  time.sleep(99999999)
   
  
  
 def close_tab():
-  p = subprocess.Popen(["chrome", "http://www.facebook.com"])
-  p.kill()
+  
+  
+  url = "https://www.google.com/"
+    
+  # Fetching the Url 
+  #driver.get(url) 
+  driver.close()
+
 
 
 
@@ -51,7 +59,8 @@ def close_tab():
   
 #def import_tabs():
   
-#def exit_():
+def exit_():
+  aa = 3
   
 def menu():
  print("Menu :")
