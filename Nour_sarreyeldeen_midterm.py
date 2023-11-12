@@ -39,14 +39,16 @@ class Browser_tabs():
    tab.driver.get(link)
     
  def close_Tab(self):
-   choice= int(input("enter Tab Number: "))-1
-   if (0<= choice <= len(self.tabs)):
-    tab = self.tabs[choice]
-    tab.driver.close()
-     
-    del self.tabs[choice]
+   if len(self.tabs) == 0:
+    print("no open tabs.")
    else:
-     print ("Invalid Choice!")
+     choice= int(input("enter Tab Number: "))-1
+     if (0<= choice <= len(self.tabs)):
+      tab = self.tabs[choice]
+      tab.driver.close()
+      del self.tabs[choice]
+     else:
+      print ("Invalid Choice!")
 
 
 Tabs = {}
@@ -112,7 +114,7 @@ def menu():
       borwser.openTab()
       #open_tab()
     elif choice == 2:
-      close_tab()
+      borwser.close_Tab()
     elif choice == 3:
       switch_tab()
     #elif choice == 4:
