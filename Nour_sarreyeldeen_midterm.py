@@ -57,7 +57,10 @@ def switch_tab():
  
 #def open_nested_tab():
   
-#def clear_all_tabs():
+def clear_all_tabs():
+    driver.close()
+    Tabs.clear()
+    print("Tabs closed.")
   
 #def save_tabs():
   
