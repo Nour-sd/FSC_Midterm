@@ -77,8 +77,8 @@ class Browser_tabs():
     print("no open tabs.")
    else:
       new_tabs = []
-      new_tab = {}
       for i in range(len(self.tabs)):
+        new_tab = {}
         new_tab["title"] = self.tabs[i].title
         new_tab["URL"] = self.tabs[i].URL
         new_tab["TabNumber"]=self.tabs[i].TabNumber
