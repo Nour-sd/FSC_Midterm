@@ -107,12 +107,7 @@ class Browser_tabs():
     tab = Browser_tab(title, URL, TabNumber)
     self.tabs.append(tab)
    
-
-
 #def open_nested_tab():
-  
-  
-#def import_tabs():
 
 browser = Browser_tabs()
 
@@ -133,7 +128,6 @@ def menu():
 
     if choice == 1:
       browser.openTab()
-      #open_tab()
     elif choice == 2:
       browser.close_Tab()
     elif choice == 3:
