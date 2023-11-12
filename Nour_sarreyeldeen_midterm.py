@@ -19,15 +19,16 @@ Tabs = []
 driver = webdriver.Chrome() 
 
 
+
 def open_tab():
   Tab = {}
   Tab["URL"] = input("enter a valid URL:")
   Tab["Title"] = input("enter title: ")
   Tab["number"] = len(Tabs) + 1
-  Tabs.append(Tab)
   link = "https://" + Tab["URL"]
   print(link)
   driver.get(link)
+  Tabs.append(Tab)
 def close_tab():
   
   if Tabs:
@@ -41,18 +42,14 @@ def close_tab():
      print("Invalid tab number, try again...")
   else:
     driver.close()
-def switch_tab():
-  if len(Tabs) > 1:
-   print(f"Tabs:,{Tabs}")
-   for i, tab in enumerate(Tabs):
-    choice = int(input("Enter tab number: ")) - 1
-    if 0 <= choice < len(driver.window_handles):
-     driver.switch_to.window(driver.window_handles[choice])
-     
+def switch_tab(tab_index):
+    if len(Tabs) > 1:
+        if 0 <= tab_index < len(driver.window_handles):
+            driver.switch_to.window(driver.window_handles[tab_index])
+        else:
+            print("Invalid tab number.")
     else:
-     print("Invalid tab number.")
-  else:
-   print("No tabs to switch.")
+        print("No tabs to switch.")
   
 
 #def display_all_tabs():
