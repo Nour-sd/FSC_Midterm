@@ -56,6 +56,15 @@ class Browser_tabs():
     print("no open tabs.")
    else:
     choice = int(input("Enter tab number:")) - 1
+    if (0<= choice <= len(self.tabs)):
+      tab = self.tabs[choice]
+      page = urlopen(tab.URL)
+      html_bytes = page.read()
+      html = html_bytes.decode("utf-8") 
+      print(html)
+    else:
+      print ("Invalid Choice!")
+      
   
  def display_all_Tabs(self):
    for i in range(len(self.tabs)):
