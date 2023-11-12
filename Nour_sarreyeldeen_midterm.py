@@ -73,7 +73,13 @@ class Browser_tabs():
     for i in range(len(self.tabs)):
       print(f'{self.tabs[i].TabNumber}. {self.tabs[i].title}')
 
-#def clear_all_Tabs(self):
+ def clear_all_Tabs(self):
+   if len(self.tabs)==0:
+    print("no open tabs.")
+   else:
+     for i in range(len(self.tabs)):
+       self.tabs[i].driver.close()
+     self.tabs.clear
   
    
 
