@@ -16,9 +16,16 @@ from selenium.webdriver.common.by import By
 import time
 
 
+class Browser_tab():
+ 
+ driver = webdriver.Chrome() 
+ def __init__(self, Title, URL):
+        self.tabs = []
+        self.title = Title
+        self.URL = URL
+    
 
-Tabs = []
-driver = webdriver.Chrome() 
+
 
 
 
@@ -47,7 +54,7 @@ def close_tab():
 def switch_tab():
   if len(Tabs) > 1:
     print("Tabs:")
-    for i, tab in enumerate(Tabs):
+    for i, Tab in enumerate(Tabs):
       print(Tabs)
       choice = int(input("Enter tab number: ")) - 1
       if 0 <= choice < len(driver.window_handles):
