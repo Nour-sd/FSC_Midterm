@@ -75,7 +75,9 @@ class Browser_tabs():
    if len(self.tabs)==0:
     print("no open tabs.")
    else:
-     file_path = input("enter file path:")
+     #file_path = input("enter file path:")
+      file = json.dumps(self.tabs)
+      print(file)
 
 #def open_nested_tab():
   
@@ -114,8 +116,8 @@ def menu():
       #open_nested_tab()
     elif choice == 6:
      browser.clear_all_Tabs()
-    #elif choice == 7:
-      #save_tabs()
+    elif choice == 7:
+      browser.save_Tabs()
     #elif choice == 8:
     #  import_tab()
     elif choice == 9:
