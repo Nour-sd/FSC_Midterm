@@ -26,7 +26,6 @@ class Browser_tab():
         self.driver = webdriver.Chrome()
 
  def openTab(self):
-   Tab = {}
    self.URL = input("enter a valid URL:")
    self.title = input("enter title: ")
    #TabNumber = len(tabs) + 1
@@ -35,6 +34,8 @@ class Browser_tab():
    self.driver.get(link)
    #Tabs.append(Tab)
     
+Tabs = {}
+Tab = {}
 def open_tab():
   Tab = {}
   Tab["URL"] = input("enter a valid URL:")
@@ -42,32 +43,32 @@ def open_tab():
   Tab["number"] = len(Tabs) + 1
   link = "https://" + Tab["URL"]
   print(link)
-  driver.get(link)
+  #driver.get(link)
   Tabs.append(Tab)
 def close_tab():
   
-  if Tabs:
-   for i, tab in enumerate(Tabs):
-    choice = int(input("Enter tab number: ")) - 1
-    if 0 <= choice < len(Tabs):
-     driver.switch_to.window(driver.window_handles[choice])
-     driver.close()
-     del Tabs[choice]
-    else:
+  #if Tabs:
+   #for i, tab in enumerate(Tabs):
+    #choice = int(input("Enter tab number: ")) - 1
+   # if 0 <= choice < len(Tabs):
+   #  driver.switch_to.window(driver.window_handles[choice])
+    # driver.close()
+     #del Tabs[choice]
+    #else:
      print("Invalid tab number, try again...")
-  else:
-    driver.close()
+ # else:
+  #  driver.close()
 def switch_tab():
   if len(Tabs) > 1:
     print("Tabs:")
     for i, Tab in enumerate(Tabs):
       print(Tabs)
       choice = int(input("Enter tab number: ")) - 1
-      if 0 <= choice < len(driver.window_handles):
-       driver.switch_to.window(driver.window_handles[choice])
-       break
-      else:
-        print("Invalid tab number.")
+      #if 0 <= choice < len(driver.window_handles):
+       #driver.switch_to.window(driver.window_handles[choice])
+       #break
+      #else:
+      #  print("Invalid tab number.")
     else:
       print("No enough tabs to switch.")
 #def display_all_tabs():
@@ -75,13 +76,15 @@ def switch_tab():
 #def open_nested_tab():
   
 def clear_all_tabs():
-    driver.close()
+    #driver.close()
     Tabs.clear()
     print("Tabs closed.")
   
 #def save_tabs():
   
 #def import_tabs():
+
+borwser = Browser_tab()
 
 def menu():
  print("Menu :")
