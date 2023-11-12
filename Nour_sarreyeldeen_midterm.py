@@ -83,10 +83,13 @@ class Browser_tabs():
         new_tab["URL"] = self.tabs[i].URL
         new_tab["TabNumber"]=self.tabs[i].TabNumber
         new_tabs.append(new_tab)
-       
-     #file_path = input("enter file path:")
       file = json.dumps(new_tabs)
       print(file)
+      file_path = input("enter file path:")
+      document = open(file_path, "w")
+      document.write(file)
+      document.close()
+
 
 #def open_nested_tab():
   
