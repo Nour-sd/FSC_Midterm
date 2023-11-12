@@ -29,6 +29,7 @@ def open_tab():
   print(link)
   driver.get(link)
 def close_tab():
+  
   if Tabs:
    for i, tab in enumerate(Tabs):
     choice = int(input("Enter tab number: ")) - 1
@@ -40,7 +41,18 @@ def close_tab():
      print("Invalid tab number, try again...")
   else:
     driver.close()
-#def switch_tabs(Tab):
+def switch_tab():
+  if len(Tabs) > 1:
+   print(f"Tabs:,{Tabs}")
+   for i, tab in enumerate(Tabs):
+    choice = int(input("Enter tab number: ")) - 1
+    if 0 <= choice < len(driver.window_handles):
+     driver.switch_to.window(driver.window_handles[choice])
+     
+    else:
+     print("Invalid tab number.")
+  else:
+   print("No tabs to switch.")
   
 
 #def display_all_tabs():
@@ -71,8 +83,8 @@ def menu():
       open_tab()
     elif choice == 2:
       close_tab()
-    #elif choice == 3:
-      #switch_tab()
+    elif choice == 3:
+      switch_tab()
     #elif choice == 4:
       #display_all_tabs()
     #elif choice == 5:
@@ -83,11 +95,10 @@ def menu():
       #save_tabs()
     #elif choice == 8:
     #  import_tab()
-    #elif choice == 9:
-     # exit_()
-     # break
+    elif choice == 9:
+      break
     else:
-      print("Invalid choice. Please enter a valid choice.")
+     print("Invalid choice. try again...")
 
 if __name__ == "__main__":
     menu()
