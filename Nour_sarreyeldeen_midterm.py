@@ -18,17 +18,23 @@ import time
 
 class Browser_tab():
  
- driver = webdriver.Chrome() 
- def __init__(self, Title, URL):
+ def __init__(self, Title, URL, TabNumber):
         self.tabs = []
         self.title = Title
         self.URL = URL
+        self.TabNumber = TabNumber
+        self.driver = webdriver.Chrome()
+
+ def openTab(self):
+   Tab = {}
+   self.URL = input("enter a valid URL:")
+   self.title = input("enter title: ")
+   #TabNumber = len(tabs) + 1
+   link = "https://" + self.URL
+   print(link)
+   self.driver.get(link)
+   #Tabs.append(Tab)
     
-
-
-
-
-
 def open_tab():
   Tab = {}
   Tab["URL"] = input("enter a valid URL:")
