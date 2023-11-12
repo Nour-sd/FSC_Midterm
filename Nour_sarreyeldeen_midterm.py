@@ -79,7 +79,7 @@ class Browser_tabs():
    else:
      for i in range(len(self.tabs)):
        self.tabs[i].driver.close()
-     self.tabs.clear
+     self.tabs.clear()
   
    
 
