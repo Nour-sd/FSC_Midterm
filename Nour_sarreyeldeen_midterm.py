@@ -15,21 +15,28 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 import time
 
-
 class Browser_tab():
- 
  def __init__(self, Title, URL, TabNumber):
-        self.tabs = []
-        self.title = Title
-        self.URL = URL
-        self.TabNumber = TabNumber
-        self.driver = webdriver.Chrome()
+  self.title = Title
+  self.URL = URL
+  self.TabNumber = TabNumber
+
+
+class Browser_tabs():
+ 
+ def __init__(self):
+  self.tabs = []
+  self.driver = webdriver.Chrome()
 
  def openTab(self):
-   self.URL = input("enter a valid URL:")
-   self.title = input("enter title: ")
+   url = input("enter a valid URL:")
+   title = input("enter title: ")
    #TabNumber = len(tabs) + 1
-   link = "https://" + self.URL
+   tab = Browser_tab(url, title,1)
+   self.tabs.append(tab)
+   #print('opening new tab')
+   #self.driver.get(url)
+   link = "https://" + url
    print(link)
    self.driver.get(link)
    #Tabs.append(Tab)
@@ -84,7 +91,7 @@ def clear_all_tabs():
   
 #def import_tabs():
 
-borwser = Browser_tab()
+borwser = Browser_tabs()
 
 def menu():
  print("Menu :")
@@ -102,7 +109,8 @@ def menu():
     choice = int(input("Enter your choice : "))
 
     if choice == 1:
-      open_tab()
+      borwser.openTab()
+      #open_tab()
     elif choice == 2:
       close_tab()
     elif choice == 3:
