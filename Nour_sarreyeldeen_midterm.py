@@ -93,11 +93,13 @@ class Browser_tabs():
  def import_Tabs(self):
   file_path = input("enter file path:")
   file = open(file_path, 'r')
-  #print(file.read())
   data = file.read()
   file.close()
   result = json.loads(data)
-  #print(result)
+  if len(self.tabs)>0:
+     for i in range(len(self.tabs)):
+       self.tabs[i].driver.close()
+     self.tabs.clear()
   for tab in result:
     title = tab['title']
     URL = tab['URL']
