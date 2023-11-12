@@ -1,19 +1,9 @@
-# menu :
-# openinig tabs : open a url
-# close tab : close it
-# switch tab : switch between tabs
-#display all tabs: tabs html url read
-# open nested tab :tab tab b2alb tab
-# clear all tabs :
-# save tabs :
-# import tabs :
-# exit :
+
 import webbrowser, selenium
 import json 
 
 from selenium import webdriver
 from selenium.webdriver.common.by import By
-import time
 from urllib.request import urlopen
 
 class Browser_tab():
@@ -86,6 +76,7 @@ class Browser_tabs():
     print("no open tabs.")
    else:
      file_path = input("enter file path:")
+
 #def open_nested_tab():
   
   
