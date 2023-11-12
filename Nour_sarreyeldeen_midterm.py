@@ -67,9 +67,14 @@ class Browser_tabs():
       
   
  def display_all_Tabs(self):
-   for i in range(len(self.tabs)):
-     print(f'{self.tabs[i].TabNumber}. {self.tabs[i].title}')
+   if len(self.tabs)==0:
+    print("no open tabs.")
+   else:
+    for i in range(len(self.tabs)):
+      print(f'{self.tabs[i].TabNumber}. {self.tabs[i].title}')
 
+#def clear_all_Tabs(self):
+  
    
 
 
@@ -78,7 +83,7 @@ Tab = {}
 
 #def open_nested_tab():
   
- def clear_all_tabs():
+def clear_all_tabs():
     #driver.close()
     Tabs.clear()
     print("Tabs closed.")
