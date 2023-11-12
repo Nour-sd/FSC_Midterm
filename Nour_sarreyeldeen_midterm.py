@@ -81,18 +81,13 @@ class Browser_tabs():
        self.tabs[i].driver.close()
      self.tabs.clear()
   
-   
-
-
-Tabs = {}
-Tab = {}
-
+ def save_Tabs(self):
+   if len(self.tabs)==0:
+    print("no open tabs.")
+   else:
+     file_path = input("enter file path:")
 #def open_nested_tab():
   
-def clear_all_tabs():
-    #driver.close()
-    Tabs.clear()
-    print("Tabs closed.")
   
 #def save_tabs():
   
