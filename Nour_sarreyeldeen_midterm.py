@@ -31,16 +31,24 @@ class Browser_tabs():
  def openTab(self):
    url = input("enter a valid URL:")
    title = input("enter title: ")
-   #TabNumber = len(tabs) + 1
-   tab = Browser_tab(url, title, 1)
+   TabNumber = len(self.tabs) + 1
+   tab = Browser_tab(url, title, TabNumber)
    self.tabs.append(tab)
-   #print('opening new tab')
-   #self.driver.get(url)
    link = "https://" + url
    print(link)
    tab.driver.get(link)
-   #Tabs.append(Tab)
     
+ def close_Tab(self):
+   choice= int(input("enter Tab Number: "))-1
+   if (0<= choice <= len(self.tabs)):
+    tab = self.tabs[choice]
+    tab.driver.close()
+     
+    del self.tabs[choice]
+   else:
+     print ("Invalid Choice!")
+
+
 Tabs = {}
 Tab = {}
 
