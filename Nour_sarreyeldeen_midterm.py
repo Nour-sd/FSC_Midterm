@@ -89,12 +89,17 @@ class Browser_tabs():
       document = open(file_path, "w")
       document.write(file)
       document.close()
+    
+ def import_Tabs(self):
+  file_path = input("enter file path:")
+  file = open(file_path, 'r')
+  print(file.read())
+  file.close()
+   
 
 
 #def open_nested_tab():
   
-  
-#def save_tabs():
   
 #def import_tabs():
 
@@ -130,8 +135,8 @@ def menu():
      browser.clear_all_Tabs()
     elif choice == 7:
       browser.save_Tabs()
-    #elif choice == 8:
-    #  import_tab()
+    elif choice == 8:
+      browser.import_Tabs()
     elif choice == 9:
       break
     else:
