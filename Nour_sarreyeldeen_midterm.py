@@ -14,6 +14,7 @@ import json
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 import time
+from urllib.request import urlopen
 
 class Browser_tab():
  def __init__(self, Title, URL, TabNumber):
@@ -49,6 +50,12 @@ class Browser_tabs():
       del self.tabs[choice]
      else:
       print ("Invalid Choice!")
+
+ def switch_Tabs(self):
+   if len(self.tabs)==0:
+    print("no open tabs.")
+   else:
+    choice = int(input("Enter tab number:")) - 1
   
  def display_all_Tabs(self):
    for i in range(len(self.tabs)):
