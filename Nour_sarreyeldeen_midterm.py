@@ -45,14 +45,18 @@ def close_tab():
   else:
     driver.close()
 def switch_tab():
- p = driver.current_window_handle
-
- chwd = driver.window_handles
-
- for w in chwd:
-  if(w!=p):
-    driver.switch_to.window(w)
-  break
+  if len(Tabs) > 1:
+    print("Tabs:")
+    for i, tab in enumerate(Tabs):
+      print(Tabs)
+      choice = int(input("Enter tab number: ")) - 1
+      if 0 <= choice < len(driver.window_handles):
+       driver.switch_to.window(driver.window_handles[choice])
+       break
+      else:
+        print("Invalid tab number.")
+    else:
+      print("No enough tabs to switch.")
 #def display_all_tabs():
  
 #def open_nested_tab():
