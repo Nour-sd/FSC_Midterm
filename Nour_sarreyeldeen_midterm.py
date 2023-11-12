@@ -9,10 +9,12 @@
 # import tabs :
 # exit :
 import webbrowser, selenium
+import json 
 
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 import time
+
 
 
 Tabs = []
@@ -42,16 +44,15 @@ def close_tab():
      print("Invalid tab number, try again...")
   else:
     driver.close()
-def switch_tab(tab_index):
-    if len(Tabs) > 1:
-        if 0 <= tab_index < len(driver.window_handles):
-            driver.switch_to.window(driver.window_handles[tab_index])
-        else:
-            print("Invalid tab number.")
-    else:
-        print("No tabs to switch.")
-  
+def switch_tab():
+ p = driver.current_window_handle
 
+ chwd = driver.window_handles
+
+ for w in chwd:
+  if(w!=p):
+    driver.switch_to.window(w)
+  break
 #def display_all_tabs():
  
 #def open_nested_tab():
@@ -61,6 +62,7 @@ def switch_tab(tab_index):
 #def save_tabs():
   
 #def import_tabs():
+
 def menu():
  print("Menu :")
  print("1. Openinig tabs")
