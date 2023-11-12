@@ -126,8 +126,8 @@ def menu():
       browser.display_all_Tabs()
     #elif choice == 5:
       #open_nested_tab()
-    #elif choice == 6:
-     # clear_all_tabs()
+    elif choice == 6:
+     browser.clear_all_Tabs()
     #elif choice == 7:
       #save_tabs()
     #elif choice == 8:
