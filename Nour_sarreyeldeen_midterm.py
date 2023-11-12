@@ -152,5 +152,35 @@ if __name__ == "__main__":
 
  
 
+#  >>>>    Conclusion:The program enters an infinite loop,
+#         allowing the user to interact with the browser tabs until they choose the option to exit.
+#         The code provides a simple command-line interface for managing multiple browser tabs using
+#         Selenium for automation and JSON for saving and loading tab information.
+#         The user can open, close, switch between tabs, and perform other actions through the provided menu.
+#         Used: necessary libraries
+#         Define a class for individual browser tabs
+#         Define a class for managing multiple browser tabs
+#         Method to open a new tab
+#         Method to close a tab
+#         Method to switch to a tab and display its HTML content
+#         Method to display information about all open tabs
+#         Method to close all open tabs
+#         Method to save information about open tabs to a JSON file
+#         Method to import information about tabs from a JSON file
+#         Create an instance of Browser_tabs
+#         Define a menu function for user interaction
+#         Selenium: The Selenium library is used for web automation. 
+#         In this code,
+#         It is used to control and interact with the Chrome browser.
+#         JSON: The JSON library is used for working with JSON data.
+#         In this code, it is used to save and load information about browser tabs to and from a JSON file.
+ 
 
 
+#>>>>         resources links:#https://www.browserstack.com/guide/python-selenium-to-run-web-automation-test
+              #https://realpython.com/python-web-scraping-practical-introduction/#build-your-first-web-scraper
+              #https://www.w3schools.com/python/python_json.asp#:~:text=If%20you%20have%20a%20Python,the%20json.dumps()%20method
+              #https://www.geeksforgeeks.org/convert-class-object-to-json-in-python/
+              #https://pythonexamples.org/python-json-to-list/
+              #https://www.w3schools.com/python/python_classes.asp
+              #https://sparkbyexamples.com/python/convert-python-list-to-json/#:~:text=dumps()%20method%20to%20convert,boolean%2C%20and%20None%20into%20JSON.
