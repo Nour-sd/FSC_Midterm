@@ -20,38 +20,30 @@ class Browser_tab():
   self.title = Title
   self.URL = URL
   self.TabNumber = TabNumber
+  self.driver = webdriver.Chrome()
 
 
 class Browser_tabs():
  
  def __init__(self):
   self.tabs = []
-  self.driver = webdriver.Chrome()
 
  def openTab(self):
    url = input("enter a valid URL:")
    title = input("enter title: ")
    #TabNumber = len(tabs) + 1
-   tab = Browser_tab(url, title,1)
+   tab = Browser_tab(url, title, 1)
    self.tabs.append(tab)
    #print('opening new tab')
    #self.driver.get(url)
    link = "https://" + url
    print(link)
-   self.driver.get(link)
+   tab.driver.get(link)
    #Tabs.append(Tab)
     
 Tabs = {}
 Tab = {}
-def open_tab():
-  Tab = {}
-  Tab["URL"] = input("enter a valid URL:")
-  Tab["Title"] = input("enter title: ")
-  Tab["number"] = len(Tabs) + 1
-  link = "https://" + Tab["URL"]
-  print(link)
-  #driver.get(link)
-  Tabs.append(Tab)
+
 def close_tab():
   
   #if Tabs:
