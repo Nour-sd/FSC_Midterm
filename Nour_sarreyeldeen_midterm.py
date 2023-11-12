@@ -32,7 +32,7 @@ class Browser_tabs():
    url = input("enter a valid URL:")
    title = input("enter title: ")
    TabNumber = len(self.tabs) + 1
-   tab = Browser_tab(url, title, TabNumber)
+   tab = Browser_tab(title, url, TabNumber)
    self.tabs.append(tab)
    link = "https://" + url
    print(link)
@@ -49,24 +49,17 @@ class Browser_tabs():
       del self.tabs[choice]
      else:
       print ("Invalid Choice!")
+  
+ def display_all_Tabs(self):
+   for i in range(len(self.tabs)):
+     print(f'{self.tabs[i].TabNumber}. {self.tabs[i].title}')
+
+   
 
 
 Tabs = {}
 Tab = {}
 
-def close_tab():
-  
-  #if Tabs:
-   #for i, tab in enumerate(Tabs):
-    #choice = int(input("Enter tab number: ")) - 1
-   # if 0 <= choice < len(Tabs):
-   #  driver.switch_to.window(driver.window_handles[choice])
-    # driver.close()
-     #del Tabs[choice]
-    #else:
-     print("Invalid tab number, try again...")
- # else:
-  #  driver.close()
 def switch_tab():
   if len(Tabs) > 1:
     print("Tabs:")
@@ -80,11 +73,12 @@ def switch_tab():
       #  print("Invalid tab number.")
     else:
       print("No enough tabs to switch.")
-#def display_all_tabs():
+def display_all_tabs():
+
  
 #def open_nested_tab():
   
-def clear_all_tabs():
+ def clear_all_tabs():
     #driver.close()
     Tabs.clear()
     print("Tabs closed.")
@@ -93,7 +87,7 @@ def clear_all_tabs():
   
 #def import_tabs():
 
-borwser = Browser_tabs()
+browser = Browser_tabs()
 
 def menu():
  print("Menu :")
@@ -111,14 +105,14 @@ def menu():
     choice = int(input("Enter your choice : "))
 
     if choice == 1:
-      borwser.openTab()
+      browser.openTab()
       #open_tab()
     elif choice == 2:
-      borwser.close_Tab()
+      browser.close_Tab()
     elif choice == 3:
       switch_tab()
-    #elif choice == 4:
-      #display_all_tabs()
+    elif choice == 4:
+      browser.display_all_Tabs()
     #elif choice == 5:
       #open_nested_tab()
     #elif choice == 6:
