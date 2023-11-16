@@ -145,7 +145,7 @@ def menu():
     elif choice == 9:
       break
     else:
-     print("Invalid choice. try again...")
+     print("Invalid choice. try again ...")
 
 if __name__ == "__main__":
     menu()
